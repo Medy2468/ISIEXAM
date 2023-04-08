@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ISIEXAM.Models.Etudiant>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomEtudiant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrenomEtudiant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresseEtudiant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailEtudiant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelEtudiant)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomEtudiant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrenomEtudiant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdresseEtudiant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailEtudiant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelEtudiant)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdEtudiant }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdEtudiant }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdEtudiant })
+        </td>
+    </tr>
+}
+
+</table>
